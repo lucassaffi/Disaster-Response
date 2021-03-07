@@ -61,7 +61,7 @@ def build_model(X):
                          ('rfc',MultiOutputClassifier(RandomForestClassifier()))])
 
     # Setting parameter for Gridsearch. It is taking a long time to test all possibilities, even jut for one column ("related")
-    parameters = {'rfc__estimator__n_estimators':[1],'rfc__estimator__min_samples_split':[2]}
+    parameters = {'rfc__estimator__n_estimators':[100,150],'rfc__estimator__min_samples_split':[2,3]}
 
     cv = GridSearchCV(pipeline,param_grid=parameters)
 
